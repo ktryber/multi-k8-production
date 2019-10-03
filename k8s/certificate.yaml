@@ -1,7 +1,7 @@
 apiVersion: certmanager.k8s.io/v1alpha1
 kind: Certificate
 metadata:
-  name: multi-k8-production-xyz
+  name: multi-k8-production-xyz-tls
 spec:
   secretName: multi-k8-production-xyz
   issuerRef:
