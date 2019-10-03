@@ -1,0 +1,20 @@
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+  name: multi-k8-production-xyz
+spec:
+  secretName: multi-k8-production-xyz
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: multi-k8-production.xyz
+  dnsNames:
+    - multi-k8-production.xyz
+    - www.multi-k8-production.xyz
+  acme:
+    config:
+      - http01:
+          ingressClass: nginx
+        domains:
+          - multi-k8-production.xyz
+          - www.multi-k8-production.xyz
